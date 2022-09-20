@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     private float MoveHorizontal;
     private float MoveVertical;
     
-    // Start is called before the first frame update
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         MoveHorizontal = Input.GetAxisRaw("Horizontal");
@@ -39,6 +37,11 @@ public class PlayerController : MonoBehaviour
         if(!isJumping && MoveVertical > 0f)
         {
             rb2D.AddForce(new Vector2(0f, MoveVertical * JumpForce), ForceMode2D.Impulse);
+        }
+
+        if (!isJumping && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb2D.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
         }
     }
 
