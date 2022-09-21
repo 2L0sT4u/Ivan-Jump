@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private float JumpForce;
     private bool isJumping;
     private float MoveHorizontal;
-    private float MoveVertical;
+    private bool DoubleJumpUsed;
     
     void Start()
     {
@@ -19,12 +19,12 @@ public class PlayerController : MonoBehaviour
         MoveSpeed = 50f;
         JumpForce = 200f;
         isJumping = false;
+        DoubleJumpUsed = false;
     }
 
     void Update()
     {
         MoveHorizontal = Input.GetAxisRaw("Horizontal");
-        MoveVertical = Input.GetAxisRaw("Vertical");
     }
 
     private void FixedUpdate()
@@ -34,14 +34,15 @@ public class PlayerController : MonoBehaviour
             rb2D.AddForce(new Vector2(MoveHorizontal * MoveSpeed, 0f), ForceMode2D.Impulse);
         }
 
-        if(!isJumping && MoveVertical > 0f)
+        if(!isJumping && Input.GetKeyDown(KeyCode.Space))
         {
-            rb2D.AddForce(new Vector2(0f, MoveVertical * JumpForce), ForceMode2D.Impulse);
+            rb2D.AddForce(new Vector2(0f, 7*JumpForce), ForceMode2D.Impulse);
         }
 
-        if (!isJumping && Input.GetKeyDown(KeyCode.Space))
+        if(!DoubleJumpUsed && isJumping && Input.GetKeyDown(KeyCode.Space))
         {
-            rb2D.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
+            rb2D.AddForce(new Vector2(0f, 7*JumpForce), ForceMode2D.Impulse);
+            DoubleJumpUsed = true;
         }
     }
 
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Platform")
         {
             isJumping = false;
+            DoubleJumpUsed = false;
         }
     }
 
