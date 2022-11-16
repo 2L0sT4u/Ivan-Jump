@@ -1796,6 +1796,7 @@ GameObject:
   - component: {fileID: 1579249307}
   - component: {fileID: 1579249306}
   - component: {fileID: 1579249309}
+  - component: {fileID: 1579249310}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1881,7 +1882,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83b36a5fb73b4544901b648190b9261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zeit: 25
+--- !u!114 &1579249310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579249305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820d03101d4c7f743941ff7f72ec09e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zeit: 0
   "zeitl\xE4uft": 0
   Anzeige: {fileID: 853826243}
   Anzeige2: {fileID: 2106406614}
@@ -1892,7 +1905,8 @@ MonoBehaviour:
   min2: 0
   sec2: 0
   pc: {fileID: 0}
-  sp: {fileID: 0}
+  sprachedt: 0
+  Liste: []
 --- !u!1 &1586156612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,9 +2334,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820d03101d4c7f743941ff7f72ec09e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zm: {fileID: 1579249309}
-  sp: {fileID: 0}
+  zeit: 0
+  "zeitl\xE4uft": 0
+  Anzeige: {fileID: 0}
+  Anzeige2: {fileID: 0}
+  min: 0
+  sec: 0
+  min1: 0
+  sec1: 0
+  min2: 0
+  sec2: 0
+  pc: {fileID: 0}
   sprachedt: 0
+  Liste: []
 --- !u!61 &2112399721
 BoxCollider2D:
   m_ObjectHideFlags: 0
