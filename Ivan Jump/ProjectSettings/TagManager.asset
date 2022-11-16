@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+  - wall
+  - RandUnten
+  - ziel
+  - start
+  - start2
+  - ziel2
   layers:
   - Default
   - TransparentFX
