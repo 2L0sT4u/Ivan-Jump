@@ -166,24 +166,45 @@ public class PlayerController : MonoBehaviour
         {
             zeitläuft = true;
             zeit = 0;
-        }
-        if (collision.gameObject.tag == "start")
-        {
-            if (min1 < 10 && sec1 < 10)
+
+        switch (collision.gameObject.tag)
             {
-                Anzeige2.text = "0" + min1.ToString() + ":0" + sec1.ToString();
-            }
-            if (min1 < 10 && sec1 >= 10)
-            {
-                Anzeige2.text = "0" + min1.ToString() + ":" + sec1.ToString();
-            }
-            if (min1 >= 10 && sec1 < 10)
-            {
-                Anzeige2.text = min1.ToString() + ":0" + sec1.ToString();
-            }
-            if (min1 >= 10 && sec1 >= 10)
-            {
-                Anzeige2.text = min1.ToString() + ":" + sec1.ToString();
+                case "start":
+                    if (min1 < 10 && sec1 < 10)
+                    {
+                        Anzeige2.text = "0" + min1.ToString() + ":0" + sec1.ToString();
+                    }
+                    if (min1 < 10 && sec1 >= 10)
+                    {
+                        Anzeige2.text = "0" + min1.ToString() + ":" + sec1.ToString();
+                    }
+                    if (min1 >= 10 && sec1 < 10)
+                    {
+                        Anzeige2.text = min1.ToString() + ":0" + sec1.ToString();
+                    }
+                    if (min1 >= 10 && sec1 >= 10)
+                    {
+                        Anzeige2.text = min1.ToString() + ":" + sec1.ToString();
+                    }
+                    break;
+                case "start2":
+                    if (min2 < 10 && sec2 < 10)
+                    {
+                        Anzeige2.text = "0" + min2.ToString() + ":0" + sec2.ToString();
+                    }
+                    if (min2 < 10 && sec2 >= 10)
+                    {
+                        Anzeige2.text = "0" + min2.ToString() + ":" + sec2.ToString();
+                    }
+                    if (min2 >= 10 && sec2 < 10)
+                    {
+                        Anzeige2.text = min2.ToString() + ":0" + sec2.ToString();
+                    }
+                    if (min2 >= 10 && sec2 >= 10)
+                    {
+                        Anzeige2.text = min2.ToString() + ":" + sec2.ToString();
+                    }
+                    break;
             }
         }
     }

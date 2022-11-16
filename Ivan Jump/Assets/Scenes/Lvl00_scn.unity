@@ -1900,10 +1900,10 @@ MonoBehaviour:
   Anzeige2: {fileID: 2106406614}
   min: 0
   sec: 0
-  min1: 0
-  sec1: 0
-  min2: 0
-  sec2: 0
+  min1: 5
+  sec1: 15
+  min2: 5
+  sec2: 15
   pc: {fileID: 0}
   sprachedt: 0
   Liste: []
